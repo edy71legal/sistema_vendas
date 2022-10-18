@@ -4,13 +4,19 @@
 	$senha = "";
 	$dbname = "sistema_login";
 	
-	//Criar a conexao
-	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 	
-	if(!$conn){
-		die("Falha na conexao: " . mysqli_connect_error());
-	}else{
-		//echo "Conexao realizada com sucesso";
-	}	
+// create connection
+$connect = new mysqli($servidor, $usuario, $senha, $dbname);
+
+// check connection
+if($connect->connect_error) {
+	die("connection failed : " . $connect->connect_error);
+} else {
+	// echo "Successfully Connected";
+}
+
+
+
+
 	
 ?>
